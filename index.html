@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="root">
+      <h1>Привет, это мои ответы на задания 13 недели (5 неделя JS)</h1>
+      <section class="theory">
+        <h2>Теоретические вопросы</h2>
+        <ol>
+          <li>
+            Как создать дату 24 января 2021 года, 22 часа 51 минута? Временная
+            зона — местная.
+            <p>Ответ: let date = new Date(2021, 0, 24, 22, 51);</p>
+          </li>
+          <li>
+            Для чего предназначен метод getDay()?
+            <p>
+              Ответ: это метод позволяет получить день недели от 0 (воскресенье)
+              до 6 (суббота) из объекта Date в соответствии с местным часовым
+              поясом.
+            </p>
+          </li>
+          <li>
+            Как посчитать, сколько секунд осталось до завтра?
+            <p>
+              Ответ: const getSecondsToTomorrow = () => {<br />
+              let today = new Date(); //объявляем переменную с сегодняшней
+              датой<br />
+              let hour = today.getHours(); //получаем количество часов прошедших
+              в сегодняшнем дне<br />
+              let minutes = today.getMinutes(); //получаем количество минут
+              прошедших в сегодняшнем дне<br />
+              let seconds = today.getSeconds(); //получаем количество секунд
+              прошедших в сегодняшнем дне<br />
+              let totalSecondsToday = (hour * 60 + minutes) * 60 + seconds;
+              //вычисляем общее количество секунд прошедших сегодня<br />
+              let totalSecondsInADay = 86400; //объявляем переменную с общим
+              количеством секунд за день<br />
+
+              return totalSecondsInADay - totalSecondsToday; //получаем
+              оставшееся количество секунд до завтра<br />
+              };<br />
+              console.log(getSecondsToTomorrow()); //выводим результат
+              вычисления функции в консоль
+            </p>
+          </li>
+          <li>
+            Для чего предназначен метод `getDate()`?
+            <p>
+              Ответ: это метод позволяет получить день месяца, от 1 до 31 из
+              объекта Date.
+            </p>
+          </li>
+          <li>
+            Что выведет console.log(d) ? let d = new Date(2016, 2, 9);<br />
+            console.log(d);<br />
+            <p>
+              Ответ: выведет дату 9 марта 2016 в местном часовом поясе<br />
+              Date Wed Mar 09 2016 00:00:00 GMT+0300 (Москва, стандартное время)
+            </p>
+          </li>
+          <li>
+            Что делает getTimezoneOffset() ?
+            <p>
+              Ответ: этот метод возвращает разницу в минутах между местным
+              часовым поясом и UTC (всемирное координированное время)
+            </p>
+          </li>
+          <li>
+            Что выведет консоль? let date = new Date();<br />
+            console.log(date.getUTCHours());<br />
+            <p>Ответ: 20 часов по временной зоне UTC+0</p>
+          </li>
+          <li>
+            Для чего предназначен метод getHours() объекта Date?
+            <p>
+              Ответ: для получения количества часов по местному времени на
+              настоящий момент времени.
+            </p>
+          </li>
+          <li>
+            Что выведет консоль?<br />
+            let d = new Date(); <br />
+            let y = d.getFullYear();<br />
+            console.log(y);
+            <p>Ответ: получим текущий год в формате четырех цифр (2023)</p>
+          </li>
+          <li>
+            В чём ошибка в коде?<br />
+            let y = new Date(); <br />
+            let d = y.getDate();<br />
+            console.log(d);
+            <p>
+              Ответ: да, вроде, нет ошибки. Получаем сегодняшний день месяца: 13
+            </p>
+          </li>
+        </ol>
+      </section>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
