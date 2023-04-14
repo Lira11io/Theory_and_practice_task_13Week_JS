@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles/normalize.css" />
-    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="assets/styles/normalize.css" />
+    <link rel="stylesheet" href="assets/styles/style.css" />
     <title>Document</title>
   </head>
   <body>
@@ -102,6 +102,50 @@
             </p>
           </li>
         </ol>
+      </section>
+      <section class="practice">
+        <h2>Практическое задание</h2>
+        <section class="service">
+          <h3 class="service__title">Сервис комментариев со спам фильтром</h3>
+          <div class="service__blok">
+            <div class="service__subtitle">
+              <p class="service__subtitle_text">Оставьте ваш комментарий</p>
+              <div class="service__input">
+                <label for="fio">Введите ваше ФИО:</label>
+                <input
+                  class="service__input_fio"
+                  type="text"
+                  id="fio"
+                  placeholder="Введите ваше ФИО"
+                />
+                <label for="fio">Введите ссылку вашего аватара:</label>
+                <input
+                  class="service__input_avatar"
+                  type="text"
+                  id="avatar"
+                  placeholder="Введите ссылку вашего аватара"
+                />
+                <label for="fio">Оставьте комментарий:</label>
+                <input
+                  class="service__input_comment"
+                  type="text"
+                  id="comment"
+                  placeholder="Оставьте комментарий"
+                />
+                <button class="service__input_button">Отправить</button>
+              </div>
+            </div>
+            <div class="service__subtitle">
+              <p class="service__subtitle_text">Чат</p>
+              <div class="service__subtitle_ob">
+                <div class="service__subtitle_foto"></div>
+                <div class="service__subtitle_fio"></div>
+                <div class="service__subtitle_date"></div>
+              </div>
+              <div class="service__subtitle_comment"></div>
+            </div>
+          </div>
+        </section>
       </section>
     </div>
     <script src="index.js"></script>

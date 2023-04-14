@@ -1,0 +1,98 @@
+.root {
+  margin-left: 15px;
+}
+
+/*Стили для практического задания*/
+/*Обертка для сервиса*/
+.service {
+  background-color: rgb(9, 9, 66);
+  width: 85%;
+  padding: 3rem;
+  color: aliceblue;
+  font-style: normal;
+  font-weight: 500;
+}
+
+/*Заголовок сервиса*/
+.service__title {
+  font-size: 22px;
+}
+
+/*Обертка для сервиса*/
+.service__blok {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+}
+
+/*Подзаголовки сервиса*/
+.service__subtitle_text {
+  color: rgb(13, 212, 212);
+  font-size: 18px;
+}
+
+/*Обертка для полей ввода*/
+.service__input {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/*Поля ввода*/
+.service__input_fio,
+.service__input_avatar,
+.service__input_comment {
+  border: 1.5px dashed rgb(13, 212, 212);
+  background: transparent;
+  margin-bottom: 25px;
+  width: 93%;
+  color: rgb(221, 201, 176);
+}
+
+/*свойства отображаемого текста в полях ввода по умолчанию*/
+.service__input_fio::placeholder,
+.service__input_avatar::placeholder,
+.service__input_comment::placeholder {
+  color: rgba(240, 248, 255, 0.438);
+  font-size: 11px;
+}
+
+/*Поле ввода комментария*/
+.service__input_comment {
+  min-height: 200px;
+  vertical-align: top;
+}
+
+/*Кнопка "отправить"*/
+.service__input_button {
+  background-color: rgb(13, 212, 212);
+  border: none;
+  padding: 8px;
+  color: aliceblue;
+}
+
+/*Обертка полей чата*/
+.service__subtitle_ob {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/*Аватар пользователя в чате*/
+.service__subtitle_foto {
+  min-height: 100px;
+  width: 50px;
+}
+
+/*Дата создания комментария в чате*/
+.service__subtitle_date {
+  font-size: 10px;
+}
+
+/*Текст комментария в чате*/
+.service__subtitle_comment {
+  background: transparent;
+  min-height: 200px;
+  width: 90%;
+  border: none;
+}
