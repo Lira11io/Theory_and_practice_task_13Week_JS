@@ -31,6 +31,33 @@
   font-size: 18px;
 }
 
+/*Обертка для кнопок выбора*/
+.service__check {
+  margin-bottom: 30px;
+  font-size: 11px;
+  max-width: 68%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/*Кнопки выбора отображения имени*/
+.service__check_yes,
+.service__check_no {
+  appearance: none;
+  border-radius: 2%;
+  width: 16px;
+  height: 16px;
+  border: 1.5px dashed rgb(13, 212, 212);
+  background: transparent;
+}
+
+/*Кнопки выбора отображения имени в активном состоянии*/
+.service__check_yes:checked,
+.service__check_no:checked {
+  background: rgb(13, 212, 212);
+}
+
 /*Обертка для полей ввода*/
 .service__input {
   display: flex;
@@ -82,11 +109,18 @@
 .service__subtitle_foto {
   min-height: 100px;
   width: 50px;
+  margin-right: 5px;
+}
+
+/*Размеры загруженного пользователем аватара*/
+.service__img {
+  width: 50px;
 }
 
 /*Дата создания комментария в чате*/
 .service__subtitle_date {
   font-size: 10px;
+  margin-left: auto;
 }
 
 /*Текст комментария в чате*/

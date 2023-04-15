@@ -33,7 +33,7 @@ let y = new Date();
 let d = y.getDate();
 console.log(d);
 
-//Решение практического задания
+//////////Решение практического задания
 
 //Получаем переменную, куда пользователь вводит ФИО
 const fio = document.querySelector(".service__input_fio");
@@ -41,8 +41,6 @@ const fio = document.querySelector(".service__input_fio");
 
 //получаем переменную, куда пользователь вводит ссылку на аватар
 const avatar = document.querySelector("#avatar");
-/* console.log(avatar);
-console.log(avatar.value); */
 
 //получаем переменную, куда пользователь вводит комментарий
 const comment = document.querySelector(".service__input_comment");
@@ -50,14 +48,20 @@ const comment = document.querySelector(".service__input_comment");
 
 //Получаем переменную для кнопки
 const button = document.querySelector(".service__input_button");
-/* console.log(button); */
 
 //Получаем переменную, куда будет попадать аватар пользователя
 const chat = document.querySelector(".service__subtitle_foto");
 /* console.log(chat); */
 
+//записываем в переменную ссылку на фото, которое ввел пользователь
+let avatarYes = avatar.value;
+
 //Получаем переменную, куда будет попадать ФИО пользователя
 const fio1 = document.querySelector(".service__subtitle_fio");
+/*console.log(fio1);*/
+
+//Записываем в переменную ФИО, которые ввел пользователь
+let fioV = fio.value;
 
 //Объявляю переменную с текущими датой и временем
 const dateCom = new Date();
@@ -68,26 +72,75 @@ const dateMess = document.querySelector(".service__subtitle_date");
 //Получаем переменную, куда будет попадать комментарий пользователя
 const message = document.querySelector(".service__subtitle_comment");
 
-//иВанОва лиДия петРоВна
-//https://img3.akspic.ru/previews/0/8/5/2/7/172580/172580-bakenbardy-kot-koshachih-seryj_cvet-koshki_malogo_i_srednego_razmera-360x780.jpg
-//купи viagRa xxx
+//Получаем переменную для первого чекбокса
+const checkBoxYes = document.querySelector("#checkbox-yes");
+//console.log(checkBoxYes);
+const checkBoxNo = document.querySelector("#checkbox-no");
 
-//Функция для вывода данных пользователя в чат по нажатию на кнопку
-button.addEventListener("click", () => {
-  chat.innerHTML = `
-  <img src=${avatar.value} style = "width: 50px" alt="аватар пользователя"/>`; //добавляем аватар пользователя в чат
-  /* console.log(avatar.value); */
-  const arr = fio.value.split(" "); //получаю массив полного имени
-  const arrUpp = []; //создаю новый пустой массив
-  for (let i = 0; i < arr.length; i++) {
-    arrUpp.push(
-      (arr[i] = arr[i][0].toUpperCase() + arr[i].substring(1).toLowerCase()) //заполняю новый массив с преобразованием введенных данных
-    );
+checkBoxYes.addEventListener("change", () => {
+  if (checkBoxYes.checked) {
+    fio.style.display = "blok";
+  } else {
+    fio.style.display = "none";
   }
-  let fioUpp = arrUpp.join(" "); //объединяю элементы
-  fio1.textContent = `${fioUpp}`; //вывожу ФИО пользователя в чат
-  dateMess.textContent = `${dateCom}`; //вывожу дату и время создания комментария в чат
-  message.textContent = `"${comment.value}"`
-    .replace(/viagra/gi, "***")
-    .replace(/xxx/gi, "***"); //вывожу комментарий пользователя в чат с применением спам фильтра
+
+  //получаем массив фотографий
+  let randomFoto = new Array();
+  randomFoto[0] = "assets/img/anime.jpg";
+  randomFoto[1] = "assets/img/brunette.jpg";
+  randomFoto[2] = "assets/img/cat.jpg";
+  randomFoto[3] = "assets/img/girl_with_owl.jpg";
+  randomFoto[4] = "assets/img/smile.jpg";
+  randomFoto[5] = "assets/img/raccoon_rocket.jpg";
+
+  //создаем новую переменную, чтобы использовать ее для вывода в чат всех сообщений
+  let totalString = "";
+
+  //иВанОва лиДия петРоВна
+  //https://img3.akspic.ru/previews/0/8/5/2/7/172580/172580-bakenbardy-kot-koshachih-seryj_cvet-koshki_malogo_i_srednego_razmera-360x780.jpg
+  //купи viagRa xxx
+
+  //Функция для вывода данных пользователя в чат по нажатию на кнопку
+  button.addEventListener("click", () => {
+    if (avatar.value === "") {
+      //если пользователь не загрузил аватар
+      let numberFoto = Math.floor(Math.random() * randomFoto.length); //случайный индекс фото в массиве
+      chat.innerHTML = `<img class="service__img" src="${randomFoto[numberFoto]}" alt="аватар пользователя">`; //выводим рандомное фото в чат
+    } else {
+      chat.innerHTML = `<img class="service__img" src ="${avatarYes}" alt="аватар пользователя"/>`; //добавляем аватар пользователя в чат
+    }
+
+    if (fio.value === "") {
+      fio1.textContent = "username";
+    } else {
+      const arr = fio.value.split(" "); //получаю массив полного имени
+      const arrUpp = []; //создаю новый пустой массив
+      for (let i = 0; i < arr.length; i++) {
+        arrUpp.push(
+          (arr[i] = arr[i][0].toUpperCase() + arr[i].substring(1).toLowerCase()) //заполняю новый массив с преобразованием введенных данных
+        );
+      }
+      let fioUpp = arrUpp.join(" "); //объединяю элементы
+      fio1.textContent = `${fioUpp}`; //вывожу ФИО пользователя в чат
+    }
+
+    dateMess.textContent = `${dateCom}`; //вывожу дату и время создания комментария в чат
+    message.textContent = `"${comment.value}"`
+      .replace(/viagra/gi, "***")
+      .replace(/xxx/gi, "***"); //вывожу комментарий пользователя в чат с применением спам фильтра
+
+    /* checkBoxYes.addEventListener("change", () => {
+    if (checkBoxYes.checked) {
+      fio1.style.display = "blok";
+    } else {
+      fio1.style.display = "none";
+    } */
+  });
+  /* totalString =
+    totalString +
+    `src="${randomFoto[numberFoto]}"` +
+    `src ="${avatarYes}"` +
+    `${fioUpp}` +
+    `${dateCom}` +
+    `"${comment.value}"`; */
 });
