@@ -79,7 +79,7 @@ const checkBoxNo = document.querySelector("#checkbox-no");
 
 checkBoxYes.addEventListener("change", () => {
   if (checkBoxYes.checked) {
-    fio.style.display = "blok";
+    fio.style.display = "block";
   } else {
     fio.style.display = "none";
   }
@@ -111,6 +111,7 @@ checkBoxYes.addEventListener("change", () => {
     }
 
     if (fio.value === "") {
+      //если пользователь не внес ФИО, то присваиваем имя в чате "username"
       fio1.textContent = "username";
     } else {
       const arr = fio.value.split(" "); //получаю массив полного имени
