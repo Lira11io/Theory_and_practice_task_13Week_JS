@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/styles/normalize.css" />
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <title>Решение практического задания</title>
+  </head>
+  <body>
+    <div class="root">
+      <section class="practice">
+        <h2>Практическое задание</h2>
+        <section class="service">
+          <h3 class="service__title">Сервис комментариев со спам фильтром</h3>
+          <div class="service__blok">
+            <div class="service__subtitle">
+              <p class="service__subtitle_text">Оставьте ваш комментарий</p>
+              <div class="service__check">
+                <h4>Показывать ваше имя?</h4>
+                <label for="checkbox-yes"
+                  >Да
+                  <input
+                    class="service__check_yes"
+                    type="radio"
+                    id="checkbox-yes"
+                    name="choice"
+                    value="yes"
+                  />
+                </label>
+                <label for="checkbox-no"
+                  >Нет
+                  <input
+                    class="service__check_no"
+                    type="radio"
+                    id="checkbox-no"
+                    name="choice"
+                    value="no"
+                  />
+                </label>
+              </div>
+              <div class="service__input">
+                <label for="fio">Введите ваше ФИО:</label>
+                <input
+                  class="service__input_fio"
+                  type="text"
+                  id="fio"
+                  placeholder="Введите ваше ФИО"
+                />
+                <label for="fio">Введите ссылку вашего аватара:</label>
+                <input
+                  class="service__input_avatar"
+                  type="text"
+                  id="avatar"
+                  placeholder="Введите ссылку вашего аватара"
+                />
+                <label for="fio">Оставьте комментарий:</label>
+                <input
+                  class="service__input_comment"
+                  type="text"
+                  id="comment"
+                  placeholder="Оставьте комментарий"
+                />
+                <button class="service__input_button">Отправить</button>
+              </div>
+            </div>
+            <div class="service__subtitle">
+              <p class="service__subtitle_text">Чат</p>
+              <div class="service__subtitle_item">
+                <div class="service__subtitle_foto"></div>
+                <div class="service__subtitle_fio"></div>
+                <div class="service__subtitle_date"></div>
+              </div>
+              <div class="service__subtitle_comment"></div>
+            </div>
+          </div>
+        </section>
+      </section>
+      <script src="practice.js"></script>
+    </div>
+  </body>
+</html>

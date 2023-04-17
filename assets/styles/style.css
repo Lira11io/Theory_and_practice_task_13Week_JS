@@ -99,7 +99,7 @@
 }
 
 /*Обертка полей чата*/
-.service__subtitle_ob {
+.service__subtitle_item {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -108,7 +108,6 @@
 /*Аватар пользователя в чате*/
 .service__subtitle_foto {
   min-height: 100px;
-  width: 50px;
   margin-right: 5px;
 }
 
@@ -126,7 +125,7 @@
 /*Текст комментария в чате*/
 .service__subtitle_comment {
   background: transparent;
-  min-height: 200px;
+  max-height: 200px;
   width: 90%;
   border: none;
 }
