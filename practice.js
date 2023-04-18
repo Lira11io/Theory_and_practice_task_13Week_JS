@@ -53,7 +53,11 @@ button.addEventListener("click", () => {
     <div class="service__subtitel_item">
         <img class="service__img" src="${avatarSrc}" alt="Аватар пользователя">
         <div class="service__subtitle_info">
-            <p class="service__subtitle_fio">${fio.value || "username"}</p>
+            <p class="service__subtitle_fio">${
+              fio.value
+                .toLowerCase()
+                .replace(/(^|\s)\S/g, (l) => l.toUpperCase()) || "username"
+            }</p>
             <p class="service__subtitle_date">${new Date()}</p>
         </div>
         <p class="service__subtitle_comment">${comment.value.replace(
@@ -66,7 +70,3 @@ button.addEventListener("click", () => {
   avatar.value = "";
   comment.value = "";
 });
-
-//иВанОва лиДия петРоВна
-//https://img3.akspic.ru/previews/0/8/5/2/7/172580/172580-bakenbardy-kot-koshachih-seryj_cvet-koshki_malogo_i_srednego_razmera-360x780.jpg
-//купи viagRa xxx
